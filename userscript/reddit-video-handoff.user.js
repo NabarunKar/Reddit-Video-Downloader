@@ -13,7 +13,7 @@
 ;(function () {
   'use strict'
 
-  const APP_ORIGIN = 'http://localhost:3000'
+  const APP_ORIGIN = 'https://reddit-video-downloader-2.vercel.app'
 
   /**
    * @param {unknown} node
