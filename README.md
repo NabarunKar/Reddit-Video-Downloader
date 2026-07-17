@@ -442,18 +442,18 @@ This is not reliably possible due to CORS.
 
 ```mermaid
 flowchart LR
-	subgraph RedditOrigin[Origin: https://www.reddit.com]
-		JSON[post.json (dashUrl inside)]
-		MPD[MPD + media URLs (signed)]
+	subgraph RedditOrigin["Origin: https://www.reddit.com"]
+		JSON["post.json (dashUrl inside)"]
+		MPD["MPD + media URLs (signed)"]
 	end
 
-	subgraph AppOrigin[Origin: https://reddit-video-downloader-2.vercel.app]
-		APP[Web app JS]
+	subgraph AppOrigin["Origin: https://reddit-video-downloader-2.vercel.app"]
+		APP["Web app JS"]
 	end
 
-	APP -. blocked by CORS/SOP .-> JSON
-	H[Userscript/Extension (runs on Reddit)] --> JSON
-	H -->|opens app with dashUrl| APP
+	APP -. "blocked by CORS/SOP" .-> JSON
+	H["Userscript/Extension (runs on Reddit)"] --> JSON
+	H -->|"opens app with dashUrl"| APP
 	APP --> MPD
 ```
 
