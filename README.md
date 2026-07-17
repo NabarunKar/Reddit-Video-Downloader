@@ -443,8 +443,8 @@ This is not reliably possible due to CORS.
 ```mermaid
 flowchart LR
 	subgraph RedditOrigin[Origin: https://www.reddit.com]
-		JSON[post.json]\n(dashUrl inside)
-		MPD[MPD + media URLs]\n(signed)
+		JSON[post.json<br/>(dashUrl inside)]
+		MPD[MPD + media URLs<br/>(signed)]
 	end
 
 	subgraph AppOrigin[Origin: https://reddit-video-downloader-2.vercel.app]
@@ -452,7 +452,7 @@ flowchart LR
 	end
 
 	APP -. blocked by CORS/SOP .-> JSON
-	H[Userscript/Extension]\n(runs on Reddit) --> JSON
+	H[Userscript/Extension<br/>(runs on Reddit)] --> JSON
 	H -->|opens app with dashUrl| APP
 	APP --> MPD
 ```
